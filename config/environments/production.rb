@@ -48,6 +48,9 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.neo4j.session_type = :server_db
+  config.neo4j.session_path = ENV['GRAPHSTORY_URL']
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
