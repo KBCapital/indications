@@ -8,4 +8,4 @@ test:
 
 production:
   type: server_db
-  url: <%= ENV['NEO4J_URL'] %>
+  url: <%= ENV['GRAPHSTORY_URL'] %>
