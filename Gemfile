@@ -26,6 +26,7 @@ gem 'neo4j', '~> 5.0.0'
 gem 'basscss-rails'
 gem 'puma'
 gem 'newrelic_rpm'
+gem 'react-rails', '~> 1.6.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
