@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228072122) do
+ActiveRecord::Schema.define(version: 20160229090545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,19 @@ ActiveRecord::Schema.define(version: 20160228072122) do
     t.text     "target"
     t.text     "notes"
     t.uuid     "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.uuid     "indication_id"
   end
 
   add_index "drugs", ["company_id"], name: "index_drugs_on_company_id", using: :btree
+  add_index "drugs", ["indication_id"], name: "index_drugs_on_indication_id", using: :btree
+
+  create_table "indications", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trials", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "phase"
