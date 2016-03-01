@@ -1,0 +1,129 @@
+<div class="overflow-scroll">
+  <table class="table-light bg-white rounded">
+    <thead class="bg-darken-1">
+      <tr>
+        <th>
+          Drug name
+        </th>
+        <th>
+          Drug target
+        </th>
+        <th>
+          Company
+        </th>
+        <th>
+          Ticker
+        </th>
+        <th>
+          Phase
+        </th>
+        <th>
+          Inclusion criteria
+        </th>
+        <th>
+          N
+        </th>
+        <th>
+          OR (%)
+        </th>
+        <th>
+          CR (%)
+        </th>
+        <th>
+          Durability of Response
+        </th>
+        <th>
+          PR (%)
+        </th>
+        <th>
+          SD (%)
+        </th>
+        <th>
+          Median OS (mo)
+        </th>
+        <th>
+          6 mo OS rate (%)
+        </th>
+        <th>
+          2 yr OS (%)
+        </th>
+        <th>
+          Media PFS (mo)
+        </th>
+        <th>
+          AEs
+        </th>
+        <th>
+          Others
+        </th>
+        <th>
+          Notes
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% drugs.each do |d| %>
+        <% trial = d.trials.order(created_at: :desc).first %>
+        <tr>
+          <td>
+            <%= d.name %>
+          </td>
+          <td>
+            <%= d.target %>
+          </td>
+          <td>
+            <%= d.company.name %>
+          </td>
+          <td>
+            <%= d.company.ticker %>
+          </td>
+          <td>
+            <%= trial.phase %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["Inclusion Criteria"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["N"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["OR(%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["CR(%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["Durability of response"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["PR(%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["SD(%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["Median OS (mo)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["6 mo OS rate (%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["2yr OS (%)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["Median PFS (mo)"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["AEs"] %>
+          </td>
+          <td>
+            <%= trial.attribute_blob["Others"] %>
+          </td>
+          <td>
+            <%= d.notes %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

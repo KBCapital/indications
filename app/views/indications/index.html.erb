@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Indications</h2>
+
+<ul>
+  <% @indications.each do |indication| %>
+    <li class="mb1"><%= link_to indication.name, indication %></li>
+  <% end %>
+</ul>
+
+<%#= link_to 'Add a new Indication', new_indication_path %>

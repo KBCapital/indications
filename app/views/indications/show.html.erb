@@ -1,0 +1,11 @@
+<%= link_to "<< View all indications", indications_url %>
+<p id="notice"><%= notice %></p>
+<h2><%= @indication.name %></h2>
+<% @parsed_notes.each do |k, v| %>
+  <h3><%= k %></h3>
+  <p>
+    <%= v %>
+  </p>
+<% end %>
+<hr>
+<%= render partial: 'shared/drug_table', locals: { drugs: @indication.drugs } %>

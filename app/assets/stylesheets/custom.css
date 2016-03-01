@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700,700italic,400italic);
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 64rem;
+}
+
+.table-light th,
+.table-light td {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0,.125);
+}
+
+.table-light tr:last-child td {
+  border-bottom: 0;
+}
