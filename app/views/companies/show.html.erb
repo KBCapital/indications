@@ -1,0 +1,5 @@
+<%= link_to "<< View all companies", companies_url %>
+<p id="notice"><%= notice %></p>
+<h2><%= @company.name %></h2>
+<hr>
+<%= render partial: 'shared/drug_table', locals: { drugs: @company.drugs } %>

@@ -72,7 +72,7 @@
             <%= d.target %>
           </td>
           <td>
-            <%= d.company.name %>
+            <%= link_to (d.company.name || ''), d.company %>
           </td>
           <td>
             <%= d.company.ticker %>

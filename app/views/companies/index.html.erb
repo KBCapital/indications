@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Companies</h2>
+
+<ul>
+  <% @companies.each do |c| %>
+    <li class="mb1"><%= link_to c.name, c %></li>
+  <% end %>
+</ul>
+
+<%#= link_to 'New Company', new_company_path %>
